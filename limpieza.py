@@ -38,11 +38,12 @@ def limpiar_ventas(ventas):
     #         Pista: no uses dropna(); estarías borrando una venta con dinero real.
 
     ventas["producto"] = ventas["producto"].fillna("Sin especificar")
+    ventas.producto.info()
 
     # TODO 4: convertir "fecha_venta" a fecha con pd.to_datetime().
     #         Pista: el formato de los datos es AAAA-MM-DD.
 
-    ventas["fecha_venta"] = pd.to_datetime(ventas["fecha_venta"], format="%d/%m/%Y")
+    ventas["fecha_venta"] = pd.to_datetime(ventas["fecha_venta"], format="%Y-%m-%d")
     ventas.fecha_venta.info()
     # TODO 5: eliminar las filas duplicadas y reiniciar el índice.
 
