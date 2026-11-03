@@ -6,4 +6,6 @@
 
 5.5 Con ventas.isnull().sum() encontré que hay un producto nulo, o vacío. Con ventas["producto"].fillna("Sin especificar") reemplacé el campo nulo por ese string.
 
+6 El resultado del merge contiene 14 columnas porque ventas tiene 10 columnas y clientes tiene 5. Al unir ambas tablas mediante id_cliente, esta columna compartida aparece una sola vez. Por eso el resultado es 10 + 5 - 1 = 14 columnas.
+
 
