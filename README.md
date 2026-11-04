@@ -1,11 +1,18 @@
 # Taller práctico: análisis de datos con Pandas
 
-4.3 Con ventas.info() se observa que la columna "producto" tiene 67 non-null, dando a saber que hay una fila sin producto (V004).
+## 7. Análisis y agrupaciones
 
-4.6 Con .iloc[2,6] se obtiene el total de la venta V003 porque, como la primera columna se convierte en el índice de la fila, la columna siguiente queda en posición 0. Por ende, la posición 6 es la columna "total". 
+### 1. ¿Qué categoría genera más ingresos?
+Tecnología genera los mayores ingresos, con $14.290.000. El criterio utilizado fue la suma de la columna `total`, agrupada por `categoria`.
 
-5.5 Con ventas.isnull().sum() encontré que hay un producto nulo, o vacío. Con ventas["producto"].fillna("Sin especificar") reemplacé el campo nulo por ese string.
+### 2. ¿Qué canal vende más?
+Online es el canal con mayores ingresos, con $14.669.000 y 35 transacciones. El criterio principal utilizado fue el valor total de los ingresos por canal.
 
-6 El resultado del merge contiene 14 columnas porque ventas tiene 10 columnas y clientes tiene 5. Al unir ambas tablas mediante id_cliente, esta columna compartida aparece una sola vez. Por eso el resultado es 10 + 5 - 1 = 14 columnas.
+### 3. ¿Los clientes VIP compran más que los Regulares?
+Sí. Los clientes VIP realizan aproximadamente 1,21 compras por cliente y gastan en promedio $336.083,33. Los clientes Regular realizan aproximadamente 1,08 compras por cliente y gastan $308.611,11. Se compararon los promedios por cliente para evitar distorsiones por la diferencia en el tamaño de los segmentos.
 
+### 4. ¿Qué método de pago es el más usado?
+Efectivo es el método más utilizado, con 30 transacciones. El criterio utilizado fue contar las apariciones de cada método mediante `value_counts()`.
 
+### 5. ¿Cuáles son los cinco clientes con más compras?
+Los cinco primeros son Nicolas Cardona, Matias Rodriguez, Mia Quintero, Luna Montoya y Luis Perez. Todos tienen dos compras. Se utilizó el gasto total como criterio de desempate.
